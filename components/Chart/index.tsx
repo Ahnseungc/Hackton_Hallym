@@ -1,3 +1,5 @@
+"use client";
+
 import { useLayoutEffect } from "react";
 
 import * as am4core from "@amcharts/amcharts4/core";

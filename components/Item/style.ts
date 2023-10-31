@@ -7,6 +7,12 @@ export const MainContainer = styled.div`
   padding: 5px 5px 17px 5px;
   border-bottom: 0.5px solid lightgray;
   margin-top: 3vh;
+
+  & .ProductDate {
+    margin-top: 6vh;
+    text-align: right;
+    font-size: 10px;
+  }
 `;
 
 export const Photo = styled.div`

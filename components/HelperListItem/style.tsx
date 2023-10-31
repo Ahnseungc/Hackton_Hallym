@@ -22,6 +22,13 @@ export const ChartProductImage = styled.div`
 export const ChartProductName = styled.div`
   margin-bottom: 3vh;
   margin-right: 5vh;
+  display: flex;
+  width: 100vw;
+  align-items: center;
+  & .PRDate {
+    margin-left: 18vh;
+    font-size: 10px;
+  }
 `;
 
 export const ChartProductPrice = styled.div`

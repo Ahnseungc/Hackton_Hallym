@@ -7,18 +7,66 @@ import Link from "next/link";
 import HelperListItem from "@components/HelperListItem";
 
 const List = [
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
-  { Title: "과제도와주실분 구합니다.", Detail: "과제도와주실분 구합니다." },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
+  {
+    Title: "과제도와주실분 구합니다.",
+    Detail: "과제도와주실분 구합니다.",
+    Date: "20분전",
+  },
 ];
 const HelperList = () => {
   const [HList] = useState(List);
@@ -33,7 +81,7 @@ const HelperList = () => {
             key={index}
             style={{ color: "black", textDecoration: "none" }}
           >
-            <HelperListItem Title={e.Title} Detail={e.Detail} />
+            <HelperListItem Title={e.Title} Detail={e.Detail} Date={e.Date} />
           </Link>
         );
       })}

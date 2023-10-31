@@ -1,0 +1,26 @@
+.scroll-locked {
+  overflow: hidden;
+}
+
+@keyframes bottomsheetup {
+  0% {
+    transform: translateY(1600px);
+  }
+
+  100% {
+    transform: translateY(712px);
+  }
+}
+
+.modal-bottom {
+  animation: bottomsheetup 1000ms ease-in-out;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 10vh;
+  background-color: rgba(221, 217, 217, 0.2);
+  display: flex;
+  justify-content: center;
+  z-index: 100;
+}

@@ -8,9 +8,10 @@ interface Props {
   Image: String;
   Name: String;
   Price: String;
+  Date: String;
 }
 
-const Item = ({ Image, Name, Price }: Props) => {
+const Item = ({ Image, Name, Price, Date }: Props) => {
   return (
     <Link
       href={"/productdetail"}
@@ -21,6 +22,7 @@ const Item = ({ Image, Name, Price }: Props) => {
         <div className="Product">
           <div className="ProductName">{Name}</div>
           <div className="ProductPrice">{Price}</div>
+          <div className="ProductDate">{Date}</div>
         </div>
       </MainContainer>
     </Link>
