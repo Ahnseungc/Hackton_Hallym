@@ -2,8 +2,8 @@ import React from "react";
 
 type Props = {};
 
-function Home({}: Props) {
+function PriceInquiry({}: Props) {
   return <div>priceinquiry</div>;
 }
 
-export default Home;
+export default PriceInquiry;

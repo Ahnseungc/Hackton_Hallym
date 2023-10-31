@@ -1,9 +1,20 @@
 import React from "react";
 
-type Props = {};
+import Link from "next/link";
 
-function Home({}: Props) {
-  return <div>Home</div>;
+import ItemList from "@components/ItemList";
+
+function Home() {
+  return (
+    <div>
+      <Link
+        href={"/productdetail"}
+        style={{ textDecoration: "none", color: "black" }}
+      >
+        <ItemList />
+      </Link>
+    </div>
+  );
 }
 
 export default Home;

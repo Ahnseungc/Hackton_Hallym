@@ -1,11 +1,26 @@
 "use client";
 
+import { useState } from "react";
+
 import { FiSearch } from "react-icons/fi";
 
+import SearchBar from "@components/SearchBar";
+
 const Search = () => {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const togglePopup = () => {
+    setShowPopup(true);
+    console.log(showPopup);
+  };
+  const test = () => {
+    console.log("성공");
+  };
+
   return (
     <>
-      <FiSearch />
+      <FiSearch size={20} onClick={togglePopup} />
+      {showPopup ? <SearchBar SearchProduct={test} /> : undefined}
     </>
   );
 };
