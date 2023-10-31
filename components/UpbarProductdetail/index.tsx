@@ -25,9 +25,7 @@ const UpbarContainer = styled.div`
 const UpbarProductdetail = () => {
   return (
     <UpbarContainer>
-      {/* <Link href={"/"} style={{ color: "black", textDecoration: "none" }}> */}
       <BackBtn />
-      {/* </Link> */}
     </UpbarContainer>
   );
 };

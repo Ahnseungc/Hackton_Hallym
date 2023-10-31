@@ -6,7 +6,7 @@ type Props = {};
 
 function Helper({}: Props) {
   return (
-    <div>
+    <div style={{ height: "90vh'" }}>
       <HelperList />
     </div>
   );

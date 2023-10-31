@@ -1,5 +1,3 @@
-import React from "react";
-
 import styled from "@emotion/styled";
 import Link from "next/link";
 
@@ -30,10 +28,12 @@ const ChatBtn = styled.div`
 const PriceTab = styled.div``;
 
 const TabBar = () => {
+  //   const [pricest, setPricest] = useState(Price.Price);
+
   return (
     <TabBarContainer>
       <PriceTab>
-        <div>300,000</div>
+        <div></div>
         <div>가격제안 불가</div>
       </PriceTab>
       <Link href="/chat">

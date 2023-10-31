@@ -9,20 +9,24 @@ interface Props {
   Name: String;
   Price: String;
   Date: String;
+  Id: any;
+  userId: any;
 }
 
-const Item = ({ Image, Name, Price, Date }: Props) => {
+const Item = ({ Image, Name, Price, Date, Id, userId }: Props) => {
   return (
     <Link
-      href={"/productdetail"}
+      href={`/productdetail/${Id}`}
       style={{ textDecoration: "none", color: "black" }}
     >
       <MainContainer>
-        <Photo>{Image}</Photo>
+        <Photo>
+          <img src={`${Image}`} alt="/" width={"100%"} height={"100%"} />
+        </Photo>
         <div className="Product">
           <div className="ProductName">{Name}</div>
-          <div className="ProductPrice">{Price}</div>
           <div className="ProductDate">{Date}</div>
+          <div className="ProductPrice">{Price}원</div>
         </div>
       </MainContainer>
     </Link>

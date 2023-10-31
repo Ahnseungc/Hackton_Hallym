@@ -13,15 +13,23 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const pathname = usePathname();
-  console.log(pathname);
+  const pathnameg = pathname.replace(/[0-9]/g, "");
+
+  console.log(pathnameg);
 
   return (
     <html>
-      <head />
-      <body>
-        {pathname === "/productdetail" ? <ProductDetailUpbar /> : <Upbar />}
+      <head></head>
+      <body className="body">
+        {pathnameg === `/productdetail/` ||
+        pathnameg === `/priceinquiry/inquirydetail` ||
+        pathnameg === "/helper" ? (
+          <ProductDetailUpbar />
+        ) : (
+          <Upbar />
+        )}
         {children}
-        {pathname === "/productdetail" ? <ProductDetailTabber /> : <TabBar />}
+        {pathnameg === `/productdetail/` ? <ProductDetailTabber /> : <TabBar />}
       </body>
     </html>
   );

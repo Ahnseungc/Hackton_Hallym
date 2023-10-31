@@ -12,14 +12,23 @@ const SearchBar = ({ SearchProduct }: Props) => {
     <InputGroup
       size="lg"
       style={{
-        width: "80%",
-        height: "30%",
+        width: "100%",
+        height: "60%",
+        transition: "0.5s ease-inout",
       }}
     >
       <Form.Control
-        placeholder="검색어를 입력하세요"
+        placeholder="원하는 제품을 찾으세요"
         aria-label="search"
         aria-describedby="search1"
+        style={{
+          height: "3vh",
+          width: "35vw",
+          fontSize: "10px",
+          borderRadius: "20px",
+          color: "#3182f6",
+          marginLeft: "3vh",
+        }}
         onChange={SearchProduct}
       />
     </InputGroup>

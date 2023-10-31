@@ -4,13 +4,19 @@ export const ProductdetailContainer = styled.div`
   width: 90vw;
   display: flex;
   flex-direction: column;
+  &::-webkit-scrollbar {
+    display: none; /* Chrome, Safari, Opera*/
+  }
 `;
 
 export const ProductImage = styled.div`
   width: 100vw;
   height: 30vh;
-  border: 1px solid black;
   border-radius: 10px;
+
+  & img {
+    object-fit: fill;
+  }
 `;
 export const ProductName = styled.div`
   width: 100vw;

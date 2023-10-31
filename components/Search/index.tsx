@@ -19,7 +19,11 @@ const Search = () => {
 
   return (
     <>
-      <FiSearch size={20} onClick={togglePopup} />
+      <FiSearch
+        size={20}
+        onClick={togglePopup}
+        style={{ stroke: " #3182f6;" }}
+      />
       {showPopup ? <SearchBar SearchProduct={test} /> : undefined}
     </>
   );

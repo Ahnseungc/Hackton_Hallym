@@ -14,13 +14,13 @@ const TabBarContainer = styled.div`
   right: 0;
   background-color: white;
   height: 60px;
-
+  background-color: #3182f6;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const TabIcon = styled.div`
   font-size: 24px;
-  color: #555;
+  color: white;
 `;
 
 const TabBar = () => {
