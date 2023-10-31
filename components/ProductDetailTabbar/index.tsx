@@ -36,7 +36,7 @@ const TabBar = () => {
         <div>300,000</div>
         <div>가격제안 불가</div>
       </PriceTab>
-      <Link href="/priceinquiry">
+      <Link href="/chat">
         <ChatBtn>채팅하기</ChatBtn>
       </Link>
     </TabBarContainer>

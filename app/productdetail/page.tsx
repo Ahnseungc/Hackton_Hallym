@@ -1,22 +1,29 @@
-import React from "react";
+"use client";
 
-// import {ProductdetailContainer,Image,pdUserName,,pdProductdetail,ProductName,HopePlace,HopePlaceName,HopePlaceImage} from "./style"
+import {
+  HopePlace,
+  HopePlaceImage,
+  HopePlaceName,
+  ProductDetail,
+  ProductdetailContainer,
+  ProductImage,
+  ProductName,
+} from "./style";
 
 type Props = {};
 
 function Productdetail({}: Props) {
   return (
-    // <ProductdetailContainer>
-    //   <Image>이미지</Image>
-    //   <pdUserName>username</pdUserName>
-    //   <ProductName>Productname</ProductName>
-    //   <pdProductdetail>Productdetail</pdProductdetail>
-    //   <HopePlace>
-    //     <HopePlaceName>HopePalceName</HopePlaceName>
-    //     <HopePlaceImage>HopePlaceImage</HopePlaceImage>
-    //   </HopePlace>
-    // </ProductdetailContainer>
-    <div>h2</div>
+    <ProductdetailContainer>
+      <ProductImage>이미지</ProductImage>
+
+      <ProductName>Productname</ProductName>
+      <ProductDetail>Productdetail</ProductDetail>
+      <HopePlace>
+        <HopePlaceName>HopePalceName</HopePlaceName>
+        <HopePlaceImage>HopePlaceImage</HopePlaceImage>
+      </HopePlace>
+    </ProductdetailContainer>
   );
 }
 

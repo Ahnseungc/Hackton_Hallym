@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { FiBarChart, FiHome, FiSquare, FiUser, FiUsers } from "react-icons/fi";
+import { FiBarChart, FiHome, FiSquare, FiUsers } from "react-icons/fi";
 
 const TabBarContainer = styled.div`
   display: flex;
@@ -44,11 +44,6 @@ const TabBar = () => {
       <Link href="/home">
         <TabIcon>
           <FiSquare />
-        </TabIcon>
-      </Link>
-      <Link href="/user">
-        <TabIcon>
-          <FiUser />
         </TabIcon>
       </Link>
     </TabBarContainer>
