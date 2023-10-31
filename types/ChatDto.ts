@@ -1,9 +1,9 @@
 export class ChatOutputDto {
     id!: number;
     itemId!: number;
-    author!: number;
+    seller!: number;
     message!: string;
-    counterpart!: number;
+    buyer!: number;
     createdAt!: Date;
     sentBy!: number;
 }
@@ -22,7 +22,7 @@ export class ChatInputDto {
     sentBy!: number;
 }
 
-export type ChatListOutputDto =  {
+export type ChatListOutputDto = {
     itemId: number;
     seller: number;
     buyer: number;
