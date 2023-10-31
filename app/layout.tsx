@@ -1,3 +1,8 @@
+"use client";
+
+import TabBar from "@components/Tabbar";
+import Upbar from "@components/Upbar";
+
 export default function RootLayout({
   children,
 }: {
@@ -6,7 +11,11 @@ export default function RootLayout({
   return (
     <html>
       <head />
-      <body>{children}</body>
+      <body>
+        <Upbar />
+        {children}
+        <TabBar />
+      </body>
     </html>
   );
 }
