@@ -1,11 +1,14 @@
 "use client";
 
+import Link from "next/link";
 import { FiChevronLeft } from "react-icons/fi";
 
 const BackBtn = () => {
   return (
     <>
-      <FiChevronLeft size={30} />
+      <Link href="/">
+        <FiChevronLeft size={30} />
+      </Link>
     </>
   );
 };
