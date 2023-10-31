@@ -1,7 +1,6 @@
 "use client";
 
 import styled from "@emotion/styled";
-import Link from "next/link";
 
 import BackBtn from "@components/BackBtn";
 
