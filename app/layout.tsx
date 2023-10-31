@@ -3,9 +3,9 @@
 import { usePathname } from "next/navigation";
 
 import ProductDetailTabber from "@components/ProductDetailTabbar";
-import ProductDetailUpbar from "@components/UpbarProductdetail";
 import TabBar from "@components/Tabbar";
 import Upbar from "@components/Upbar";
+import ProductDetailUpbar from "@components/UpbarProductdetail";
 
 export default function RootLayout({
   children,

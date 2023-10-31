@@ -1,19 +1,22 @@
 import React from "react";
 
+// import {ProductdetailContainer,Image,pdUserName,,pdProductdetail,ProductName,HopePlace,HopePlaceName,HopePlaceImage} from "./style"
+
 type Props = {};
 
 function Productdetail({}: Props) {
   return (
-    <div>
-      <div className="image">이미지</div>
-      <div className="username">username</div>
-      <div className="Productname">Productname</div>
-      <div className="Productdetail">Productdetail</div>
-      <div className="HopePlace">
-        <div className="HopePalceName">HopePalceName</div>
-        <div className="HopePlaceImage">HopePlaceImage</div>
-      </div>
-    </div>
+    // <ProductdetailContainer>
+    //   <Image>이미지</Image>
+    //   <pdUserName>username</pdUserName>
+    //   <ProductName>Productname</ProductName>
+    //   <pdProductdetail>Productdetail</pdProductdetail>
+    //   <HopePlace>
+    //     <HopePlaceName>HopePalceName</HopePlaceName>
+    //     <HopePlaceImage>HopePlaceImage</HopePlaceImage>
+    //   </HopePlace>
+    // </ProductdetailContainer>
+    <div>h2</div>
   );
 }
 
