@@ -1,7 +1,7 @@
 import styled from "@emotion/styled";
 
 export const ProductdetailContainer = styled.div`
-  width: 100vw;
+  width: 90vw;
   display: flex;
   flex-direction: column;
 `;
