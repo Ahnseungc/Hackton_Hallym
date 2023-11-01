@@ -4,6 +4,7 @@
 import React, {useEffect, useState} from "react";
 
 import axios from "axios";
+import Link from "next/link";
 import useSWR from "swr";
 
 import fetcher from "@hooks/fetcher";
@@ -96,6 +97,7 @@ const List = [
 
 const API_BASE_URL = `http://10.50.227.158:3000/item/`;
 const HOPE_PLACE = `http://10.50.227.158:3000/safezone/`;
+const myId = 2;
 const Page = ({params}: { params: { id: any } }) => {
     const {data, error} = useSWR(API_BASE_URL + params.id, fetcher);
 
@@ -129,9 +131,9 @@ const Page = ({params}: { params: { id: any } }) => {
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
-                    paddingLeft: '15px',
-                    paddingRight: '15px',
-                    paddingTop: '20px',
+                    paddingLeft: '30px',
+                    paddingRight: '30px',
+                    paddingTop: '30px',
                     height: '100%',
                     gap: '20px'
                 }}>
@@ -153,22 +155,28 @@ const Page = ({params}: { params: { id: any } }) => {
                         <HopePlaceDescription>{safezone ? safezone.description : "Loading..."}</HopePlaceDescription>
                         <HopePlaceImage><img width={"200px"} style={{borderRadius: '3px'}}
                                              src={safezone ? safezone.image : ""}/></HopePlaceImage>
-                        <div style={{
-                            display: 'flex',
-                            justifyContent: 'center',
-                            alignItems: 'center',
-                            padding: '10px',
-                            backgroundColor: '#1E293B',
-                            height: '35px',
-                            borderRadius: "10px",
-                            position: 'sticky',
-                            bottom: "80px",
-                            
-                        }}>
+                        <Link style={{
+                            textDecoration: 'none'
+                        }} href={`/chatDetail?itemId=${data.id}&sellerId=${data.userId}&buyerId=${myId}`}>
+                            <div style={{
+                                display: 'flex',
+                                justifyContent: 'center',
+                                alignItems: 'center',
+                                padding: '10px',
+                                backgroundColor: '#1E293B',
+                                paddingTop: "15px",
+                                paddingBottom: "15px",
+                                borderRadius: "10px",
+                                position: 'sticky',
+                                bottom: "80px",
+
+                            }}>
                             <span style={{
                                 color: 'white'
                             }}>판매자와 채팅하기</span>
-                        </div>
+                            </div>
+                        </Link>
+
                     </HopePlace>
                 </div>
 
