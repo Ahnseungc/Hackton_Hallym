@@ -1,7 +1,7 @@
 "use client";
 
 // import Item from "@components/Item";
-import React, {useEffect, useState} from "react";
+import React, { useEffect, useState } from "react";
 
 import axios from "axios";
 import Link from "next/link";
@@ -12,89 +12,89 @@ import fetcher from "@hooks/fetcher";
 import {getUserId} from "../../userid.provider";
 import {formatNumber} from "../../util";
 import {
-    HopePlace,
-    HopePlaceDescription,
-    HopePlaceImage,
-    HopePlaceName,
-    HopePlaceTitle,
-    ProductDetail,
-    ProductdetailContainer,
-    ProductImage,
-    ProductName,
+  HopePlace,
+  HopePlaceDescription,
+  HopePlaceImage,
+  HopePlaceName,
+  HopePlaceTitle,
+  ProductDetail,
+  ProductdetailContainer,
+  ProductImage,
+  ProductName,
 } from "../style";
 
 //지울예정
 const List = [
-    {
-        id: 1,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 2,
-        Image: "사진",
-        Name: "아이폰12미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 3,
-        Image: "사진",
-        Name: "아이폰11미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 4,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 5,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 6,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 7,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 8,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 9,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
-    {
-        id: 10,
-        Image: "사진",
-        Name: "아이폰13미니 그린 128기가",
-        Price: "2800000",
-        Date: "44분전",
-    },
+  {
+    id: 1,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 2,
+    Image: "사진",
+    Name: "아이폰12미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 3,
+    Image: "사진",
+    Name: "아이폰11미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 4,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 5,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 6,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 7,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 8,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 9,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
+  {
+    id: 10,
+    Image: "사진",
+    Name: "아이폰13미니 그린 128기가",
+    Price: "2800000",
+    Date: "44분전",
+  },
 ];
 
 const API_BASE_URL = `http://10.50.227.158:3000/item/`;
@@ -231,8 +231,9 @@ const Page = ({params}: { params: { id: any } }) => {
 
             </ProductdetailContainer>
         </div>
-    );
-
+      </ProductdetailContainer>
+    </div>
+  );
 };
 
 export default Page;

@@ -1,24 +1,66 @@
 "use client";
 
 import "bootstrap/dist/css/bootstrap.css";
-import { useRef, useState } from "react";
+import { use, useEffect, useRef, useState } from "react";
 import "./style.css";
 
+import axios from "axios";
 import Button from "react-bootstrap/Button";
 import Col from "react-bootstrap/Col";
 import Container from "react-bootstrap/Container";
 import Form from "react-bootstrap/Form";
 import Row from "react-bootstrap/Row";
-import { FiPlus } from "react-icons/fi";
 
-import KaKaMap from "@components/KaKaoMap";
+import { Pagination } from "swiper/modules";
+
+import { Swiper, SwiperSlide } from "swiper/react";
+
+import "swiper/css";
+import "swiper/css/pagination";
+
+import useGeolocation from "@components/Geolocation";
 
 const ItemAddModal = () => {
   const [isModalOpened, setIsModalOpened] = useState(false);
+  const [isImage, setIsImage] = useState([]);
+
+  //post 전송
+  const [images, setImages] = useState();
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
+  const [price, setPrice] = useState("");
+  const [safezoneId, setSafezoneId] = useState(0);
+
+  // const onClickPost = (e)=>{
+  //     event.preventDefault();
+  //     const formData = new FormData();
+  // }
+
+  // const handleimage =(e:any)=>{
+  //   event.preventDefault();
+  //   setImages(e)
+
+  // }
+
+  const location = useGeolocation();
+
   const html = document.querySelector("html");
   const ref = useRef();
 
-  //스크롤 락
+  useEffect(() => {
+    const Safezone = axios
+      .get("http://10.50.227.158:3000/safezone", {
+        params: {
+          latitude: location.coordinates.latitude,
+          longitude: location.coordinates.longitude,
+        },
+      })
+      .then((res) => {
+        setIsImage(res.data);
+      })
+      .catch((err) => console.log(err));
+  }, [location]);
+
   const openModal = () => {
     setIsModalOpened(true);
     html?.classList.add("scroll-locked");
@@ -104,7 +146,7 @@ const ItemAddModal = () => {
                   </Col>
                   <Col sm>
                     <Form.Control
-                      type="password"
+                      type="number"
                       placeholder="₩ 가격을 입력해주세요"
                     />
                   </Col>
@@ -119,7 +161,39 @@ const ItemAddModal = () => {
                   </Col>
                   <Col sm>
                     SAFE ZONE
-                    <KaKaMap />
+                    <div
+                      style={{
+                        display: "flex",
+                        justifyContent: "center",
+                        paddingLeft: "5vw",
+                        borderRadius: "20px",
+                      }}
+                    >
+                      <Swiper
+                        pagination={{ clickable: true }}
+                        modules={[Pagination]}
+                        autoplay={{
+                          delay: 2500,
+                          disableOnInteraction: false,
+                        }}
+                        spaceBetween={10}
+                        slidesPerView={1}
+                        className={`w-[20rem] h-[10rem] md:w-[30rem] md:h-[15rem] lg:w-[61rem] my-6 max-w-[500px] md:max-w-[976px] max-h-[15rem] `}
+                      >
+                        {isImage.map((e: any, index: any) => {
+                          return (
+                            <SwiperSlide key={index}>
+                              <img
+                                src={`${e.image}`}
+                                alt="/"
+                                width={"300px"}
+                                height={"180px"}
+                              />
+                            </SwiperSlide>
+                          );
+                        })}
+                      </Swiper>
+                    </div>
                   </Col>
                 </Form.Group>
                 <br />

@@ -7,15 +7,20 @@ export const ChartMainContainer = styled.div`
   align-items: center;
   margin-top: 5vh;
   border-bottom: 0.5px solid lightgray;
+  justify-content: center;
 `;
 
 export const ChartProductImage = styled.div`
-  width: 50px;
-  height: 50px;
-  border: 1px solid black;
+  width: 100px;
+  height: 100px;
+
   border-radius: 10px;
   margin-bottom: 3vh;
   margin-right: 6vh;
+
+  & img {
+    object-fit: cover;
+  }
 `;
 
 export const ChartProductName = styled.div`
