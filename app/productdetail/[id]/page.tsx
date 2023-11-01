@@ -157,7 +157,7 @@ const Page = ({params}: { params: { id: any } }) => {
                     fontSize: '15px',
                     fontWeight: '600'
                 }}>
-                   {data.price < product.priceStat.averagePrice ? `평균 시세보다 ${formatNumber(product.priceStat.averagePrice - data.price)}원 저렴해요!` : `평균 시세보다 ${data.price - product.priceStat.averagePrice}원 비싸요!`}  </span>
+                   {data.price < product.priceStat.averagePrice ? `평균 시세보다 ${formatNumber(product.priceStat.averagePrice - data.price)}원 저렴해요!` : `평균 시세보다 ${formatNumber(data.price - product.priceStat.averagePrice)}원 비싸요!`}  </span>
                     </div>
                 </Link>) : null}
 
