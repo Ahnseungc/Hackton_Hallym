@@ -42,10 +42,29 @@ export const ChatElement: React.FC<ChatElementProps> = (props) => {
         href={`/chatDetail?itemId=${props.itemId}&sellerId=${props.sellerId}&buyerId=${props.buyerId}`}
         style={{textDecoration: "none", color: "black"}}
     >
-        <div style={{display: 'flex'}}>
-            <img src={data.images[0]} width={50}/>
-            <h3>{data.title}</h3>
-            <h5>{chat.data[chat.data.length - 1].message}</h5>
+        <div style={{display: 'flex', justifyContent: 'space-between', paddingLeft: '20px', paddingRight: '20px'}}>
+            <img src={data.images[0]} width={50} style={{
+                width: '50px',
+                height: '50px',
+                objectFit: 'cover',
+                borderRadius: '5px',
+                paddingBottom: '15px'
+            }}/>
+            <div style={{display: 'flex', flexDirection: 'column', alignItems: 'flex-end', justifyContent: 'center'}}>
+                <span style={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: '18px',
+                    fontWeight: '700',
+                    color: '#334155'
+                }}>{data.title}</span>
+                <span style={{
+                    margin: 0,
+                    padding: 0,
+                    fontSize: '14px',
+                    color: '#6B7280'
+                }}>{chat.data[chat.data.length - 1].message}</span>
+            </div>
         </div>
     </Link>
 }

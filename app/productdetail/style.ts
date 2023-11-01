@@ -3,8 +3,9 @@ import styled from "@emotion/styled";
 export const ProductdetailContainer = styled.div`
   width: 100%;
   display: flex;
-  height: 100%;
   flex-direction: column;
+
+  margin-bottom: 30px;
 
   &::-webkit-scrollbar {
     display: none; /* Chrome, Safari, Opera*/
@@ -66,10 +67,10 @@ export const HopePlace = styled.div`
   width: 100%
 `;
 export const HopePlaceName = styled.span`
-  color: #171717;
+  color: #334155;
   font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   padding-right: 5px;
 `;
 export const HopePlaceDescription = styled.span`

@@ -25,7 +25,10 @@ export default function RootLayout({
             alignItems: 'center',
             justifyContent: 'center'
         }}>
-            <span style={{
+            <span onClick={() => {
+                localStorage.removeItem('userId')
+                alert("reset")
+            }} style={{
                 color: '#171717',
                 fontSize: '20px',
                 fontWeight: 'normal',
@@ -39,7 +42,12 @@ export default function RootLayout({
         {/*) : (*/}
         {/*    <Upbar/>*/}
         {/*)}*/}
-        {children}
+        <div style={{
+            paddingBottom: "100px"
+        }}>
+            {children}
+        </div>
+
         <TabBar/>
         </body>
         </html>
