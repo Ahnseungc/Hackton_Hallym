@@ -139,25 +139,27 @@ const Page = ({params}: { params: { id: any } }) => {
                         height={"100%"}
                     />
                 </ProductImage>
-                {product ? (<div style={{
-                    display: 'flex',
-                    backgroundColor: data.price < product.priceStat.averagePrice ? '#3B82F6' : '#F87171',
-                    borderRadius: '5px',
-                    maxWidth: '100%',
+                {product ? (<Link href={"/priceinquiry/" + product.id} style={{textDecoration: 'none'}}>
+                    <div style={{
+                        display: 'flex',
+                        backgroundColor: data.price < product.priceStat.averagePrice ? '#3B82F6' : '#F87171',
+                        borderRadius: '5px',
+                        maxWidth: '100%',
 
-                    alignItems: 'center',
-                    justifyContent: 'center',
-                    margin: "20px 20px 0 20px",
-                    padding: "20px"
+                        alignItems: 'center',
+                        justifyContent: 'center',
+                        margin: "20px 20px 0 20px",
+                        padding: "20px"
 
-                }}>
+                    }}>
                 <span style={{
                     color: "#fff",
                     fontSize: '15px',
                     fontWeight: '600'
                 }}>
                    {data.price < product.priceStat.averagePrice ? `평균 시세보다 ${formatNumber(product.priceStat.averagePrice - data.price)}원 저렴해요!` : `평균 시세보다 ${data.price - product.priceStat.averagePrice}원 비싸요!`}  </span>
-                </div>) : null}
+                    </div>
+                </Link>) : null}
 
                 <div style={{
                     display: 'flex',

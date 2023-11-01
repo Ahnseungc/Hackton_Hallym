@@ -5,6 +5,8 @@ import useSWR from "swr";
 
 import fetcher from "@hooks/fetcher";
 
+import {formatNumber} from "../../util";
+
 type Props = {};
 
 const Chart = dynamic(() => import("@components/Chart"));
@@ -53,7 +55,7 @@ function Page({params}: { params: { id: any } }) {
                     fontSize: '15px',
                     fontWeight: '600'
                 }}>
-                    {data ? data.priceStat.averagePrice : 0}원</span>
+                    {data ? formatNumber(data.priceStat.averagePrice) : 0}원</span>
             </div>
 
         </div>
