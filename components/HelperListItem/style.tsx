@@ -4,6 +4,7 @@ export const ChartMainContainer = styled.div`
   width: 90vw;
   height: 7vh;
 
+  font-family: "Gmarket";
   margin-top: 5vh;
   padding-bottom: 2vh;
   padding-left: 2vh;

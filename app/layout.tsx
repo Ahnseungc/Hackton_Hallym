@@ -1,39 +1,48 @@
 "use client";
 
-import {usePathname} from "next/navigation";
+import { usePathname } from "next/navigation";
 
 import TabBar from "@components/Tabbar";
+import "../styles/font.css";
 
 export default function RootLayout({
-                                       children,
-                                   }: {
-    children: React.ReactNode;
+  children,
+}: {
+  children: React.ReactNode;
 }) {
-    const pathname = usePathname();
-    const pathnameg = pathname.replace(/[0-9]/g, "");
+  const pathname = usePathname();
+  const pathnameg = pathname.replace(/[0-9]/g, "");
 
-    console.log(pathnameg);
+  console.log(pathnameg);
 
-    return (
-        <html>
-        <head></head>
-        <body className="body">
-        <div style={{
-            width: '100%',
-            height: '50px',
-            display: 'flex',
-            alignItems: 'center',
-            justifyContent: 'center'
-        }}>
-            <span onClick={() => {
-                localStorage.removeItem('userId')
-                alert("reset")
-            }} style={{
-                color: '#171717',
-                fontSize: '20px',
-                fontWeight: 'normal',
-                fontFamily: 'Gmarket Sans'
-            }}>한림마켓</span>
+  return (
+    <html>
+      <head></head>
+      <body className="body">
+        <div
+          style={{
+            width: "100%",
+            height: "50px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            fontFamily: "Gmarket",
+          }}
+        >
+          <span
+            onClick={() => {
+              localStorage.removeItem("userId");
+              alert("reset");
+            }}
+            style={{
+              color: "#171717",
+              fontSize: "20px",
+              fontWeight: "normal",
+              fontFamily: "Gmarket Sans",
+            }}
+          >
+            Flea Hallym
+          </span>
         </div>
         {/*{pathnameg === `/productdetail/` ||*/}
         {/*pathnameg === `/priceinquiry/inquirydetail` ||*/}
@@ -42,14 +51,16 @@ export default function RootLayout({
         {/*) : (*/}
         {/*    <Upbar/>*/}
         {/*)}*/}
-        <div style={{
-            paddingBottom: "100px"
-        }}>
-            {children}
+        <div
+          style={{
+            paddingBottom: "100px",
+          }}
+        >
+          {children}
         </div>
 
-        <TabBar/>
-        </body>
-        </html>
-    );
+        <TabBar />
+      </body>
+    </html>
+  );
 }

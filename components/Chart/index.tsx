@@ -1,14 +1,15 @@
 "use client";
 
-import React, { PureComponent, useEffect, useState } from "react";
+import React, { useState } from "react";
+
 import {
-  LineChart,
+  CartesianGrid,
+  Legend,
   Line,
+  LineChart,
+  Tooltip,
   XAxis,
   YAxis,
-  CartesianGrid,
-  Tooltip,
-  Legend,
 } from "recharts";
 
 interface Props {
@@ -16,7 +17,8 @@ interface Props {
 }
 
 const rechartsSimpleLineChart = ({ Prs }: Props) => {
-  const [prs, setPrs] = useState(Prs);
+  // eslint-disable-next-line react-hooks/rules-of-hooks
+  const [prs] = useState(Prs);
 
   const afterPrs = prs.map((e: any) => {
     return { date: e.date.slice(6, 9), price: e.value };

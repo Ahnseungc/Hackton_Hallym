@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "@emotion/styled";
 import Link from "next/link";
-import {FiBarChart, FiHome, FiSquare, FiUsers} from "react-icons/fi";
+import { FiBarChart, FiHome, FiMessageCircle, FiUsers } from "react-icons/fi";
 
 const TabBarContainer = styled.div`
   display: flex;
@@ -24,30 +24,30 @@ const TabIcon = styled.div`
 `;
 
 const TabBar = () => {
-    return (
-        <TabBarContainer>
-            <Link href="/">
-                <TabIcon>
-                    <FiHome/>
-                </TabIcon>
-            </Link>
-            <Link href="/helper">
-                <TabIcon>
-                    <FiUsers/>
-                </TabIcon>
-            </Link>
-            <Link href="/priceinquiry">
-                <TabIcon>
-                    <FiBarChart/>
-                </TabIcon>
-            </Link>
-            <Link href="/home">
-                <TabIcon>
-                    <FiSquare/>
-                </TabIcon>
-            </Link>
-        </TabBarContainer>
-    );
+  return (
+    <TabBarContainer>
+      <Link href="/">
+        <TabIcon>
+          <FiHome />
+        </TabIcon>
+      </Link>
+      <Link href="/helper">
+        <TabIcon>
+          <FiUsers />
+        </TabIcon>
+      </Link>
+      <Link href="/priceinquiry">
+        <TabIcon>
+          <FiBarChart />
+        </TabIcon>
+      </Link>
+      <Link href="/chat">
+        <TabIcon>
+          <FiMessageCircle />
+        </TabIcon>
+      </Link>
+    </TabBarContainer>
+  );
 };
 
 export default TabBar;
