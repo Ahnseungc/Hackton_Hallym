@@ -151,8 +151,24 @@ const Page = ({params}: { params: { id: any } }) => {
                             <HopePlaceName>{safezone ? safezone.name : "Loading..."}</HopePlaceName>
                         </div>
                         <HopePlaceDescription>{safezone ? safezone.description : "Loading..."}</HopePlaceDescription>
-                        <HopePlaceImage><img width={"100px"} style={{borderRadius: '3px'}}
+                        <HopePlaceImage><img width={"200px"} style={{borderRadius: '3px'}}
                                              src={safezone ? safezone.image : ""}/></HopePlaceImage>
+                        <div style={{
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            padding: '10px',
+                            backgroundColor: '#1E293B',
+                            height: '35px',
+                            borderRadius: "10px",
+                            position: 'sticky',
+                            bottom: "80px",
+                            
+                        }}>
+                            <span style={{
+                                color: 'white'
+                            }}>판매자와 채팅하기</span>
+                        </div>
                     </HopePlace>
                 </div>
 

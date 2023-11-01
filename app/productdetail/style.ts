@@ -3,7 +3,6 @@ import styled from "@emotion/styled";
 export const ProductdetailContainer = styled.div`
   width: 100%;
   display: flex;
-  height: 100%;
   flex-direction: column;
 
   &::-webkit-scrollbar {

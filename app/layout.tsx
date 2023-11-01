@@ -39,7 +39,12 @@ export default function RootLayout({
         {/*) : (*/}
         {/*    <Upbar/>*/}
         {/*)}*/}
-        {children}
+        <div style={{
+            paddingBottom: "100px"
+        }}>
+            {children}
+        </div>
+
         <TabBar/>
         </body>
         </html>
