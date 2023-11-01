@@ -16,18 +16,16 @@ const UpbarContainer = styled.div`
   right: 0;
   position: fixed;
   width: 100vw;
-  background-color: white;
-  border-radius: 5px;
-  box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
+  background-color: #171717;
   opacity: 0.5;
 `;
 
 const UpbarProductdetail = () => {
-  return (
-    <UpbarContainer>
-      <BackBtn />
-    </UpbarContainer>
-  );
+    return (
+        <UpbarContainer>
+            <BackBtn/>
+        </UpbarContainer>
+    );
 };
 
 export default UpbarProductdetail;

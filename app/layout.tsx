@@ -1,36 +1,47 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import {usePathname} from "next/navigation";
 
-import ProductDetailTabber from "@components/ProductDetailTabbar";
 import TabBar from "@components/Tabbar";
-import Upbar from "@components/Upbar";
-import ProductDetailUpbar from "@components/UpbarProductdetail";
 
 export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
+                                       children,
+                                   }: {
+    children: React.ReactNode;
 }) {
-  const pathname = usePathname();
-  const pathnameg = pathname.replace(/[0-9]/g, "");
+    const pathname = usePathname();
+    const pathnameg = pathname.replace(/[0-9]/g, "");
 
-  console.log(pathnameg);
+    console.log(pathnameg);
 
-  return (
-    <html>
-      <head></head>
-      <body className="body">
-        {pathnameg === `/productdetail/` ||
-        pathnameg === `/priceinquiry/inquirydetail` ||
-        pathnameg === "/helper" ? (
-          <ProductDetailUpbar />
-        ) : (
-          <Upbar />
-        )}
+    return (
+        <html>
+        <head></head>
+        <body className="body">
+        <div style={{
+            width: '100%',
+            height: '50px',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center'
+        }}>
+            <span style={{
+                color: '#171717',
+                fontSize: '20px',
+                fontWeight: 'normal',
+                fontFamily: 'Gmarket Sans'
+            }}>한림마켓</span>
+        </div>
+        {/*{pathnameg === `/productdetail/` ||*/}
+        {/*pathnameg === `/priceinquiry/inquirydetail` ||*/}
+        {/*pathnameg === "/helper" ? (*/}
+        {/*    <ProductDetailUpbar/>*/}
+        {/*) : (*/}
+        {/*    <Upbar/>*/}
+        {/*)}*/}
         {children}
-        {pathnameg === `/productdetail/` ? <ProductDetailTabber /> : <TabBar />}
-      </body>
-    </html>
-  );
+        <TabBar/>
+        </body>
+        </html>
+    );
 }

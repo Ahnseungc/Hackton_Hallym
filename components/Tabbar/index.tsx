@@ -2,7 +2,7 @@ import React from "react";
 
 import styled from "@emotion/styled";
 import Link from "next/link";
-import { FiBarChart, FiHome, FiSquare, FiUsers } from "react-icons/fi";
+import {FiBarChart, FiHome, FiSquare, FiUsers} from "react-icons/fi";
 
 const TabBarContainer = styled.div`
   display: flex;
@@ -14,40 +14,40 @@ const TabBarContainer = styled.div`
   right: 0;
   background-color: white;
   height: 60px;
-  background-color: #3182f6;
+  background-color: #fff;
   box-shadow: 0px -2px 10px rgba(0, 0, 0, 0.1);
 `;
 
 const TabIcon = styled.div`
   font-size: 24px;
-  color: white;
+  color: black;
 `;
 
 const TabBar = () => {
-  return (
-    <TabBarContainer>
-      <Link href="/">
-        <TabIcon>
-          <FiHome />
-        </TabIcon>
-      </Link>
-      <Link href="/helper">
-        <TabIcon>
-          <FiUsers />
-        </TabIcon>
-      </Link>
-      <Link href="/priceinquiry">
-        <TabIcon>
-          <FiBarChart />
-        </TabIcon>
-      </Link>
-      <Link href="/home">
-        <TabIcon>
-          <FiSquare />
-        </TabIcon>
-      </Link>
-    </TabBarContainer>
-  );
+    return (
+        <TabBarContainer>
+            <Link href="/">
+                <TabIcon>
+                    <FiHome/>
+                </TabIcon>
+            </Link>
+            <Link href="/helper">
+                <TabIcon>
+                    <FiUsers/>
+                </TabIcon>
+            </Link>
+            <Link href="/priceinquiry">
+                <TabIcon>
+                    <FiBarChart/>
+                </TabIcon>
+            </Link>
+            <Link href="/home">
+                <TabIcon>
+                    <FiSquare/>
+                </TabIcon>
+            </Link>
+        </TabBarContainer>
+    );
 };
 
 export default TabBar;
