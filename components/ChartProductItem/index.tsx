@@ -16,7 +16,9 @@ const ChartProductItem = ({ PImage, PName, PPrice }: Props) => {
   console.log(PImage, PName, PPrice);
   return (
     <ChartMainContainer>
-      <ChartProductImage>{PImage}</ChartProductImage>
+      <ChartProductImage>
+        <img src={`${PImage}`} alt="/" width={"100px"} height={"70px"} />
+      </ChartProductImage>
       <CHartProduct>
         <ChartProductName>{PName}</ChartProductName>
         <ChartProductPrice>{PPrice}</ChartProductPrice>
