@@ -1,7 +1,9 @@
 "use client";
 
 import React from "react";
+
 import "@sendbird/uikit-react/dist/index.css";
+import {getUserId} from "../../app/userid.provider";
 
 export type ChatBubbleProps = {
     id: number;
@@ -14,7 +16,7 @@ export type ChatBubbleProps = {
     userId: number
 }
 
-const myId = 1;
+const myId = getUserId();
 export const ChatBubble: React.FC<ChatBubbleProps> = (props) => {
 
     return (

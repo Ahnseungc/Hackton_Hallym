@@ -8,11 +8,13 @@ import useSWR from "swr";
 
 import {ChatBubble} from "@components/ChatBubble";
 
+import {getUserId} from "../userid.provider";
+
 import type {ChatInputDto, ChatOutputDto} from "../../types/ChatDto";
 import type {ItemOutputDto} from "../../types/ItemDto";
 
 
-const myId = 1
+const myId = getUserId()
 
 const ChatDetail: React.FC = () => {
     const searchParams = useSearchParams()

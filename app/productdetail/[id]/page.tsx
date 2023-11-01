@@ -9,6 +9,7 @@ import useSWR from "swr";
 
 import fetcher from "@hooks/fetcher";
 
+import {getUserId} from "../../userid.provider";
 import {
     HopePlace,
     HopePlaceDescription,
@@ -97,7 +98,7 @@ const List = [
 
 const API_BASE_URL = `http://10.50.227.158:3000/item/`;
 const HOPE_PLACE = `http://10.50.227.158:3000/safezone/`;
-const myId = 2;
+const myId = getUserId();
 const Page = ({params}: { params: { id: any } }) => {
     const {data, error} = useSWR(API_BASE_URL + params.id, fetcher);
 
