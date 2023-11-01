@@ -10,6 +10,7 @@ import useSWR from "swr";
 import fetcher from "@hooks/fetcher";
 
 import {getUserId} from "../../userid.provider";
+import {formatNumber} from "../../util";
 import {
     HopePlace,
     HopePlaceDescription,
@@ -98,11 +99,13 @@ const List = [
 
 const API_BASE_URL = `http://10.50.227.158:3000/item/`;
 const HOPE_PLACE = `http://10.50.227.158:3000/safezone/`;
+const PROD = `http://10.50.227.158:3000/product/`;
 const myId = getUserId();
 const Page = ({params}: { params: { id: any } }) => {
     const {data, error} = useSWR(API_BASE_URL + params.id, fetcher);
 
     const [safezone, setSafezone] = useState(null);
+    const [product, setProduct] = useState(null);
 
     useEffect(() => {
         console.log(data)
@@ -112,7 +115,14 @@ const Page = ({params}: { params: { id: any } }) => {
             setSafezone(r.data)
             console.log(r.data)
         })
+
+        axios.get(PROD + data.productId).then((r) => {
+            setProduct(r.data)
+            console.log(r.data)
+        }).catch((e) => {
+        })
     }, [data]);
+
 
     if (error) return <div>failed to loading</div>;
     if (!data) return <div>loading...</div>;
@@ -129,6 +139,26 @@ const Page = ({params}: { params: { id: any } }) => {
                         height={"100%"}
                     />
                 </ProductImage>
+                {product ? (<div style={{
+                    display: 'flex',
+                    backgroundColor: data.price < product.priceStat.averagePrice ? '#3B82F6' : '#F87171',
+                    borderRadius: '5px',
+                    maxWidth: '100%',
+
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                    margin: "20px 20px 0 20px",
+                    padding: "20px"
+
+                }}>
+                <span style={{
+                    color: "#fff",
+                    fontSize: '15px',
+                    fontWeight: '600'
+                }}>
+                   {data.price < product.priceStat.averagePrice ? `평균 시세보다 ${formatNumber(product.priceStat.averagePrice - data.price)}원 저렴해요!` : `평균 시세보다 ${data.price - product.priceStat.averagePrice}원 비싸요!`}  </span>
+                </div>) : null}
+
                 <div style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -139,9 +169,25 @@ const Page = ({params}: { params: { id: any } }) => {
                     gap: '20px'
                 }}>
                     <div>
-                        <ProductName>{data.title}</ProductName>
+                        <div style={{
+                            display: 'flex',
+                            flexDirection: 'row',
+                            justifyContent: 'space-between',
+                            alignItems: 'center',
+                            paddingBottom: '5px'
+                        }}>
+                            <ProductName>{data.title}</ProductName>
+                            <span style={{
+                                fontSize: '16px',
+                                fontWeight: '600',
+                                paddingLeft: '10px',
+                                color: '#334155',
+                                width: '150px'
+                            }}>{formatNumber(data.price)}원</span>
+                        </div>
                         <ProductDetail>{data.description}</ProductDetail>
                     </div>
+                    <hr/>
                     <HopePlace>
                         <div style={{
                             display: 'flex',

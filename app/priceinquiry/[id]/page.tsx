@@ -40,8 +40,7 @@ function Page({params}: { params: { id: any } }) {
                 alignItems: 'center',
                 justifyContent: 'space-between',
                 margin: "0 20px 0 20px",
-                padding: "20px"
-
+                padding: "20px",
             }}>
                 <span style={{
                     color: '#1E293B',
@@ -56,7 +55,7 @@ function Page({params}: { params: { id: any } }) {
                 }}>
                     {data ? data.priceStat.averagePrice : 0}원</span>
             </div>
-      
+
         </div>
     );
 }

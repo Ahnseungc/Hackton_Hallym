@@ -9,6 +9,7 @@ import fetcher from "@hooks/fetcher";
 
 import {ListContainer} from "./styles";
 import {getUserId} from "../../app/userid.provider";
+import {formatNumber} from "../../app/util";
 
 const API_BASE_URL = `http://10.50.227.158:3000/item`;
 
@@ -28,7 +29,7 @@ const ItemList = () => {
                 userId={e.userId}
                 Image={e.images ? e.images[0] : ''}
                 Name={e.title}
-                Price={e.price}
+                Price={formatNumber(e.price)}
                 Date={e.ago}
                 key={index}
             />
