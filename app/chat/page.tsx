@@ -1,5 +1,4 @@
 "use client";
-import dynamic from "next/dynamic";
 import useSWR from "swr";
 
 import {ChatElement} from "@components/Chat";
@@ -16,13 +15,10 @@ type Props = {
 
 const myId = 1
 
-const DynamicAppWithNoSSR = dynamic(() => import("@components/Chat"), {
-    ssr: false,
-    loading: () => <p>...</p>,
-});
-
 function Chat({}: Props) {
-    const {data, isLoading} = useSWR<ChatListOutputDto[]>(`http://10.50.227.158:3000/chat/userId/${myId}`, fetcher)
+    const {data, isLoading} = useSWR<ChatListOutputDto[]>(`http://10.50.227.158:3000/chat/userId/${myId}`, fetcher, {
+        refreshInterval: 100
+    })
 
     return (
         <ListContainer>

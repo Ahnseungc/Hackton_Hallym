@@ -92,9 +92,9 @@ const ChatDetail: React.FC = () => {
 
             <div style={{paddingBottom: '10px'}}>
                 {
-                    data.map((d) => {
+                    !isLoading ? data.map((d) => {
                         return <ChatBubble key={d.id}{...d} userId={myId}/>
-                    })
+                    }) : "Loading"
                 }
             </div>
 
