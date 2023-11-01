@@ -73,7 +73,7 @@ function Page({params}: { params: { id: any } }) {
                         fontWeight: "600",
                     }}
                 >
-              {data.priceStat ? formatNumber(data.priceStat.averagePrice) : 0}원
+              {data.priceStat ? formatNumber(data.priceStat.averagePrice) : 0}원 (정상가 대비 -{formatNumber(data.originalPrice - data.priceStat.averagePrice)}원)
             </span>
             </div>
             <Chart Prs={data.priceStat.histories}/>

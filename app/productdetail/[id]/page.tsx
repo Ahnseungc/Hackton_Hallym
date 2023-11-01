@@ -157,7 +157,7 @@ const Page = ({params}: { params: { id: any } }) => {
                     fontSize: '15px',
                     fontWeight: '600'
                 }}>
-                   {data.price < product.priceStat.averagePrice ? `평균 시세보다 ${formatNumber(product.priceStat.averagePrice - data.price)}원 저렴해요!` : `평균 시세보다 ${data.price - product.priceStat.averagePrice}원 비싸요!`}  </span>
+                   {data.price < product.priceStat.averagePrice ? `평균 시세보다 ${formatNumber(product.priceStat.averagePrice - data.price)}원 저렴해요!` : `평균 시세보다 ${formatNumber(data.price - product.priceStat.averagePrice)}원 비싸요!`}  </span>
                     </div>
                 </Link>) : null}
 
@@ -202,7 +202,7 @@ const Page = ({params}: { params: { id: any } }) => {
                             <HopePlaceName>{safezone ? safezone.name : "Loading..."}</HopePlaceName>
                         </div>
                         <HopePlaceDescription>{safezone ? safezone.description : "Loading..."}</HopePlaceDescription>
-                        <HopePlaceImage><img width={"200px"} style={{borderRadius: '3px'}}
+                        <HopePlaceImage><img width={"400px"} style={{borderRadius: '3px', paddingTop: '20px'}}
                                              src={safezone ? safezone.image : ""}/></HopePlaceImage>
                         <Link style={{
                             textDecoration: 'none'
