@@ -6,4 +6,5 @@ export const ListContainer = styled.div`
 
   padding: 5px;
   height: 80vh;
+    
 `;

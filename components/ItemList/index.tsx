@@ -1,7 +1,5 @@
 "use client";
 
-import {useState} from "react";
-
 import useSWR from "swr";
 
 import Item from "@components/Item";
@@ -15,10 +13,11 @@ const API_BASE_URL = `http://10.50.227.158:3000/item`;
 
 
 const ItemList = () => {
-    
+
     const {data, error} = useSWR(API_BASE_URL, fetcher);
     if (error) return <div>failed to loading</div>;
     if (!data) return <div>loading...</div>;
+
 
     const list = data.map((e: any, index: any) => {
         if (e.userId == getUserId()) return null;

@@ -202,7 +202,7 @@ const Page = ({params}: { params: { id: any } }) => {
                             <HopePlaceName>{safezone ? safezone.name : "Loading..."}</HopePlaceName>
                         </div>
                         <HopePlaceDescription>{safezone ? safezone.description : "Loading..."}</HopePlaceDescription>
-                        <HopePlaceImage><img width={"200px"} style={{borderRadius: '3px'}}
+                        <HopePlaceImage><img width={"400px"} style={{borderRadius: '3px', paddingTop: '20px'}}
                                              src={safezone ? safezone.image : ""}/></HopePlaceImage>
                         <Link style={{
                             textDecoration: 'none'
