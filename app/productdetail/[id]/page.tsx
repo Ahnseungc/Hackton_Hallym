@@ -98,9 +98,6 @@ const API_BASE_URL = `http://10.50.227.158:3000/item/`;
 const HOPE_PLACE = `http://10.50.227.158:3000/safezone/`;
 const Page = ({ params }: { params: { id: any } }) => {
   const { data, error } = useSWR(API_BASE_URL + params.id, fetcher);
-  if (error) return <div>failed to loading</div>;
-  if (!data) return <div>loading...</div>;
-  console.log(data);
 
   const [safezone, setSafezone] = useState(null);
 

@@ -11,8 +11,9 @@ import {ListContainer} from "./styles";
 
 const API_BASE_URL = `http://10.50.227.158:3000/item`;
 
+
 const ItemList = () => {
-    const [ItemList, setItemList] = useState([]);
+    
     const {data, error} = useSWR(API_BASE_URL, fetcher);
     if (error) return <div>failed to loading</div>;
     if (!data) return <div>loading...</div>;

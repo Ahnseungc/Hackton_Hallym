@@ -13,10 +13,13 @@ const CharList = () => {
   if (!data) return <div>loading...</div>;
   console.log(data);
 
+  
+
   return (
     <div>
       {data.map((e: any, index: any) => {
         return (
+            <>
           <Link
             href={`/priceinquiry/${e.id}`}
             key={index}
@@ -28,6 +31,7 @@ const CharList = () => {
               PPrice={e.originalPrice}
             />
           </Link>
+            </>
         );
       })}
     </div>
